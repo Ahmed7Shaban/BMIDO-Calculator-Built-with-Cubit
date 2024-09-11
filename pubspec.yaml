@@ -40,10 +40,16 @@ dependencies:
   page_route_animator: ^1.0.4
   syncfusion_flutter_sliders: ^26.2.14
   flutter_bloc: ^8.1.6
+  rename_app: ^1.6.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/LogoApp/BMIDO.jpg"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
