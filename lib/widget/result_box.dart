@@ -4,8 +4,14 @@ import '../uitils/colors.dart';
 import 'bmi_result_texts.dart';
 
 class ResultBox extends StatelessWidget {
-  const ResultBox({super.key, required this.bmi});
+  const ResultBox(
+      {super.key,
+      required this.bmi,
+      required this.result,
+      required this.resultDOT});
   final double bmi;
+  final String result;
+  final String resultDOT;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +31,12 @@ class ResultBox extends StatelessWidget {
           children: [
             const SizedBox(height: 56),
             const BmiResultText(),
-            const FittedBox(child: BmiResult()),
-            const NORMALBMI(),
+            FittedBox(
+                child: BmiResult(
+              result: result,
+              resultDOT: resultDOT,
+            )),
+            //   const NORMALBMI(),
             TypeBmi(
               bmi: bmi,
             ),

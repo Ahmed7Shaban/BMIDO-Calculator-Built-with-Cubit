@@ -14,6 +14,14 @@ class ResultBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppCubit Get = AppCubit.get(context);
+    String numberStr = Get.result.toStringAsFixed(2);
+
+    // Split the string at the decimal point
+    List<String> parts = numberStr.split('.');
+
+    // Extract integer and decimal parts
+    String integerPart = parts[0];
+    String decimalPart = parts.length > 1 ? parts[1] : '';
     return BlocBuilder<AppCubit, AppState>(builder: (context, state) {
       return Padding(
         padding: const EdgeInsets.all(20.0),
@@ -29,6 +37,8 @@ class ResultBody extends StatelessWidget {
               const SizedBox(height: 42),
               ResultBox(
                 bmi: Get.result,
+                result: integerPart,
+                resultDOT: '.${decimalPart}',
               ),
             ],
           ),

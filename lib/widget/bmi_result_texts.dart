@@ -20,8 +20,9 @@ class BmiResultText extends StatelessWidget {
 }
 
 class BmiResult extends StatelessWidget {
-  const BmiResult({super.key});
-
+  const BmiResult({super.key, required this.result, required this.resultDOT});
+  final String result;
+  final String resultDOT;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,10 +35,10 @@ class BmiResult extends StatelessWidget {
               fontSize: 140.63,
               color: AppColor.Kprimary,
             )),
-            text: "22",
+            text: result,
             children: [
               TextSpan(
-                text: '.54',
+                text: resultDOT,
                 style: GoogleFonts.inter(
                     textStyle: const TextStyle(
                   fontWeight: FontWeight.w500,
@@ -46,26 +47,6 @@ class BmiResult extends StatelessWidget {
                 )),
               )
             ]),
-      ),
-    );
-  }
-}
-
-class NORMALBMI extends StatelessWidget {
-  const NORMALBMI({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 2.46, bottom: 18.54),
-      child: Text(
-        "NORMAL BMI",
-        style: GoogleFonts.inter(
-            textStyle: const TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 24,
-          color: AppColor.TextColor,
-        )),
       ),
     );
   }
